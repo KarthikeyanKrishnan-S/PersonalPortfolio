@@ -32,12 +32,16 @@ button {
   border-radius: 12px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
   box-shadow: var(--shadow);
   display: inline-block;
   text-align: center;
 }
-button:hover { transform: translateY(-2px); opacity: 0.92; }
+button:hover { 
+  transform: translateY(-2px); 
+  filter: brightness(1.15); 
+  opacity: 1; 
+}
 
 .container {
   max-width: 1180px;
@@ -154,6 +158,11 @@ section h1::after {
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-work:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 .project-img {
   min-height: 220px;
@@ -180,6 +189,15 @@ section h1::after {
   background: linear-gradient(135deg, #222c49, #1a233a);
   border: 1px solid rgba(255,255,255,0.08);
   padding: 14px 28px;
+}
+
+.hidden-projects {
+  display: none;
+  gap: 32px;
+  margin-top: 32px;
+}
+.hidden-projects.show {
+  display: grid;
 }
 
 /* Skills */

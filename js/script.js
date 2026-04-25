@@ -91,4 +91,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 6. Get in Touch button scroll
+    const getInTouchBtn = document.getElementById('get-in-touch-btn');
+    if (getInTouchBtn) {
+        getInTouchBtn.addEventListener('click', () => {
+            const contactSection = document.getElementById('footer');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // 7. Toggle More Projects
+    const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
+    const extraProjectsContainer = document.getElementById('extra-projects');
+    if (toggleProjectsBtn && extraProjectsContainer) {
+        toggleProjectsBtn.addEventListener('click', () => {
+            if (extraProjectsContainer.classList.contains('show')) {
+                extraProjectsContainer.classList.remove('show');
+                toggleProjectsBtn.textContent = 'More Projects >';
+            } else {
+                extraProjectsContainer.classList.add('show');
+                toggleProjectsBtn.textContent = 'Less Projects';
+            }
+        });
+    }
 });
