@@ -191,15 +191,6 @@ section h1::after {
   padding: 14px 28px;
 }
 
-.hidden-projects {
-  display: none;
-  gap: 32px;
-  margin-top: 32px;
-}
-.hidden-projects.show {
-  display: grid;
-}
-
 /* Skills */
 #skills h1 { text-align: center; margin-bottom: 40px; }
 #skills h1::after { margin: 10px auto 0; }

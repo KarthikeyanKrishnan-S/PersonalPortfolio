@@ -105,16 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 7. Toggle More Projects
     const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
-    const extraProjectsContainer = document.getElementById('extra-projects');
-    if (toggleProjectsBtn && extraProjectsContainer) {
+    const allProjects = document.querySelectorAll('#works .project-work');
+    
+    // Hide projects from index 2 onwards by default
+    allProjects.forEach((project, index) => {
+        if (index >= 2) {
+            project.style.display = 'none';
+        }
+    });
+
+    if (toggleProjectsBtn) {
+        let isExpanded = false;
         toggleProjectsBtn.addEventListener('click', () => {
-            if (extraProjectsContainer.classList.contains('show')) {
-                extraProjectsContainer.classList.remove('show');
-                toggleProjectsBtn.textContent = 'More Projects >';
-            } else {
-                extraProjectsContainer.classList.add('show');
-                toggleProjectsBtn.textContent = 'Less Projects';
-            }
+            isExpanded = !isExpanded;
+            allProjects.forEach((project, index) => {
+                if (index >= 2) {
+                    // Use 'grid' since .project-work uses CSS grid layout
+                    project.style.display = isExpanded ? 'grid' : 'none';
+                }
+            });
+            toggleProjectsBtn.textContent = isExpanded ? 'Less Projects' : 'More Projects';
         });
     }
 });
